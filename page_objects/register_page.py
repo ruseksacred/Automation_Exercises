@@ -6,6 +6,7 @@ class RegisterPage:
 
     mr_radio_button = "id_gender1"
     mrs_radio_button = "id_gender2"
+    password_field = "password"
     days_dropdown = "days"
     months_dropdown = "months"
     years_dropdown = "years"
@@ -36,8 +37,8 @@ class RegisterPage:
         self.driver.find_element(By.ID, self.mrs_radio_button).click()
 
     def input_password(self, password):
-        self.driver.find_element(By.XPATH, self.password_field).clear()
-        self.driver.find_element(By.XPATH, self.password_field).send_keys(password)
+        self.driver.find_element(By.ID, self.password_field).clear()
+        self.driver.find_element(By.ID, self.password_field).send_keys(password)
 
     def select_day_of_birth(self, day):
         select = Select(self.driver.find_element(By.ID, self.days_dropdown))

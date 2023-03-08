@@ -11,3 +11,10 @@ class BasicTest:
         self.head_section = head_section.HeadSection(self.driver)
         self.login_page = login_page.LoginPage(self.driver)
         self.register_page = register_page.RegisterPage(self.driver)
+
+    @pytest.fixture()
+    def login_user(self, view_objects_creation):
+        self.head_section.click_signup_login_button()
+        self.login_page.input_login_email("brustyn123@gmail.com")
+        self.login_page.input_login_password("Bartek123")
+        self.login_page.click_login_button()

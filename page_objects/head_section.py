@@ -9,6 +9,7 @@ class HeadSection:
     contact_us_button = "a[href='/contact_us']"
     products_button = "a[href='/products']"
     cart_button = "a[href='/view_cart']"
+    logout_button = "a[href='/logout']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -27,6 +28,10 @@ class HeadSection:
 
     def click_cart_button(self):
         self.driver.find_element(By.CSS_SELECTOR, self.cart_button).click()
+
+    def click_logout_button(self):
+        self.driver.find_element(By.CSS_SELECTOR, self.logout_button).click()
+
 
     def is_alert_present(self):
         try:

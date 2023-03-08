@@ -13,8 +13,6 @@ class LoginPage:
     login_button = "//button[@data-qa='login-button']"
     
     
-   
-   
     def __init__(self, driver):
         self.driver = driver
         
@@ -43,6 +41,12 @@ class LoginPage:
     
     def is_wrong_email_or_password_text_displayed(self):
         return self.driver.find_element(By.XPATH, "//p[text()='Your email or password is incorrect!']").is_displayed()
+    
+    def is_logged_in_as_text_displayed(self):
+        return self.driver.find_element(By.XPATH, "//header[@id='header']//li[10]//a[1]//i[@class = 'fa fa-user']").is_displayed()
+    
+    def is_alert_email_exist_displayed(self):
+        return self.driver.find_element(By.XPATH, "//p[normalize-space()='Email Address already exist!']").is_displayed()
         
 
     
