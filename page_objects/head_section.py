@@ -35,10 +35,14 @@ class HeadSection:
 
     def is_alert_present(self):
         try:
-           alert = self.driver.switch_to_alert()
+           alert = self.driver.switch_to_alert
            alert.accept()
         except:
             print("No alert")
+
+    def accept_alert(self):
+        alert = self.driver.switch_to_alert
+        alert.accept()
 
     
 

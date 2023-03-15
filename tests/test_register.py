@@ -1,7 +1,4 @@
 import pytest
-from page_objects import head_section
-from page_objects import login_page
-from page_objects import register_page
 from tests.test_basic import BasicTest
 
 

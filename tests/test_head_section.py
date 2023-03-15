@@ -11,12 +11,14 @@ class TestHeadSection(BasicTest):
         self.head_section.is_alert_present()
         assert self.driver.current_url == "https://automationexercise.com/contact_us"
 
+    @pytest.mark.id7
     def test_verify_test_case_page(self, view_objects_creation):
         self.head_section.click_test_cases_button()
         self.head_section.is_alert_present()
         assert self.driver.current_url == "https://automationexercise.com/test_cases"
 
-    def test_product_us_button(self, view_objects_creation):
+    @pytest.mark.id8
+    def test_product_button(self, view_objects_creation):
         self.head_section.click_products_button()
         self.head_section.is_alert_present()
         assert self.driver.current_url == "https://automationexercise.com/products"
